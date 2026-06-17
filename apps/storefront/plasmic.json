@@ -29,20 +29,6 @@
       "cssFilePath": "plasmic/blank_project/plasmic.css",
       "components": [
         {
-          "id": "wa2O1Rx8yCvZ",
-          "name": "Homepage",
-          "type": "managed",
-          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
-          "renderModuleFilePath": "plasmic/test/PlasmicHomepage.tsx",
-          "importSpec": {
-            "modulePath": "../pages/home.tsx"
-          },
-          "cssFilePath": "plasmic/test/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/home"
-        },
-        {
           "id": "vT52ykebc1Op",
           "name": "Button",
           "type": "managed",
@@ -54,6 +40,42 @@
           "cssFilePath": "plasmic/test/PlasmicButton.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "wa2O1Rx8yCvZ",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
+          "renderModuleFilePath": "plasmic/test/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../src/app/home/page.tsx"
+          },
+          "cssFilePath": "plasmic/test/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/home",
+          "rsc": {
+            "serverModulePath": "plasmic/test/PlasmicHomepageServer.tsx",
+            "clientModulePath": "../src/app/home/page-client.tsx"
+          }
+        },
+        {
+          "id": "C8KO1p_P0FD2",
+          "name": "HelloTest",
+          "type": "managed",
+          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
+          "renderModuleFilePath": "plasmic/test/PlasmicHelloTest.tsx",
+          "importSpec": {
+            "modulePath": "../src/app/hello-test/page.tsx"
+          },
+          "cssFilePath": "plasmic/test/PlasmicHelloTest.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/hello-test",
+          "rsc": {
+            "serverModulePath": "plasmic/test/PlasmicHelloTestServer.tsx",
+            "clientModulePath": "../src/app/hello-test/page-client.tsx"
+          }
         }
       ],
       "icons": [
@@ -99,6 +121,12 @@
           "name": "PromoBadge",
           "displayName": "PromoBadge",
           "componentImportPath": "@modules/common/components/promo-badge"
+        },
+        {
+          "id": "NX-9i5iEb0B-",
+          "name": "LoginForm",
+          "displayName": "LoginForm",
+          "componentImportPath": "@modules/account/components/auth-card/login-form"
         }
       ],
       "customFunctions": []
@@ -322,7 +350,7 @@
   "preserveJsImportExtensions": false,
   "packageManager": "npm",
   "nextjsConfig": {
-    "pagesDir": "../pages"
+    "pagesDir": "../src/app"
   },
   "cliVersion": "0.1.364",
   "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.364/dist/plasmic.schema.json"

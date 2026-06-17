@@ -1,6 +1,7 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs"
 
 import PromoBadge from "@modules/common/components/promo-badge"
+import LoginForm from "@modules/account/components/auth-card/login-form"
 
 // Pages/designs are handled by codegen (`plasmic sync`). This loader instance is
 // used ONLY to register your hand-written code components for Studio's
@@ -34,3 +35,54 @@ PLASMIC.registerComponent(PromoBadge, {
     },
   },
 })
+
+
+PLASMIC.registerComponent(LoginForm, {
+  name: "LoginForm",
+  displayName: "Login Form",
+  importPath: "@modules/account/components/auth-card/login-form",
+  props: {
+    title: {
+      type: "string",
+      defaultValue: "Welcome Back",
+    },
+    emailPlaceholder: {
+      type: "string",
+      defaultValue: "E-mail",
+    },
+    passwordPlaceholder: {
+      type: "string",
+      defaultValue: "Password",
+    },
+    forgotLabel: {
+      type: "string",
+      defaultValue: "Forgot your password??",
+    },
+    submitLabel: {
+      type: "string",
+      defaultValue: "Login",
+    },
+    registerPrompt: {
+      type: "string",
+      defaultValue: "Don't have an account?",
+    },
+    registerLabel: {
+      type: "string",
+      defaultValue: "Create Account",
+    },
+    onLogin: {
+      type: "eventHandler",
+      argTypes: [{ name: "values", type: "object" }],
+    },
+    onForgot: {
+      type: "eventHandler",
+      argTypes: [],
+    },
+    onRegister: {
+      type: "eventHandler",
+      argTypes: [],
+    },
+  },
+})
+
+

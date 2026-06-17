@@ -11,11 +11,13 @@
 // Plasmic Project: 3RVpz8tf8oHM2jiuGYHU8J
 // Component: vT52ykebc1Op
 
+"use client";
+
 import * as React from "react";
 
 import Head from "next/head";
 import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import {
   Flex as Flex__,
@@ -57,7 +59,7 @@ import {
   DataCtxReader as DataCtxReader__,
   useDataEnv,
   useGlobalActions
-} from "@plasmicapp/react-web/lib/host";
+} from "@plasmicapp/host";
 
 import { BaseButton } from "@plasmicpkgs/react-aria/skinny/registerButton";
 import { _useGlobalVariants } from "../blank_project/plasmic"; // plasmic-import: 3RVpz8tf8oHM2jiuGYHU8J/projectModule

@@ -101,43 +101,43 @@ async function getCountryCode(
  * Middleware to handle region selection and onboarding status.
  */
 export async function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.includes(".")) {
-    return NextResponse.next()
-  }
+  // if (request.nextUrl.pathname.includes(".")) {
+  //   return NextResponse.next()
+  // }
 
-  const cacheIdCookie = request.cookies.get("_medusa_cache_id")
-  const cacheId = cacheIdCookie?.value || crypto.randomUUID()
+  // const cacheIdCookie = request.cookies.get("_medusa_cache_id")
+  // const cacheId = cacheIdCookie?.value || crypto.randomUUID()
 
-  const regionMap = await getRegionMap(cacheId)
-  const countryCode = await getCountryCode(request, regionMap)
+  // const regionMap = await getRegionMap(cacheId)
+  // const countryCode = await getCountryCode(request, regionMap)
 
-  // if the country code is available, use it, otherwise use the default region
-  const country = countryCode || DEFAULT_REGION
-  const firstPathSegment = request.nextUrl.pathname.split("/")[1]?.toLowerCase()
-  const urlHasCountry = firstPathSegment === country.toLowerCase()
+  // // if the country code is available, use it, otherwise use the default region
+  // const country = countryCode || DEFAULT_REGION
+  // const firstPathSegment = request.nextUrl.pathname.split("/")[1]?.toLowerCase()
+  // const urlHasCountry = firstPathSegment === country.toLowerCase()
 
-  if (urlHasCountry) {
-    if (!cacheIdCookie) {
-      const response = NextResponse.next()
-      response.cookies.set("_medusa_cache_id", cacheId, {
-        maxAge: 60 * 60 * 24,
-      })
-      return response
-    }
-    return NextResponse.next()
-  }
+  // if (urlHasCountry) {
+  //   if (!cacheIdCookie) {
+  //     const response = NextResponse.next()
+  //     response.cookies.set("_medusa_cache_id", cacheId, {
+  //       maxAge: 60 * 60 * 24,
+  //     })
+  //     return response
+  //   }
+  //   return NextResponse.next()
+  // }
 
-  // if the url doesn't have the country, redirect to it
-  const redirectPath =
-    request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname
-  const queryString = request.nextUrl.search || ""
-  const redirectUrl = `${request.nextUrl.origin}/${country}${redirectPath}${queryString}`
+  // // if the url doesn't have the country, redirect to it
+  // const redirectPath =
+  //   request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname
+  // const queryString = request.nextUrl.search || ""
+  // const redirectUrl = `${request.nextUrl.origin}/${country}${redirectPath}${queryString}`
 
-  return NextResponse.redirect(redirectUrl, 307)
+  // return NextResponse.redirect(redirectUrl, 307)
 }
 
 export const config = {
   matcher: [
-    "/((?!api|home|plasmic-host|_next/static|_next/image|favicon.ico|images|assets|png|svg|jpg|jpeg|gif|webp).*)",
+    "/((?!api|home|test-page|plasmic-host|login-preview|_next/static|_next/image|favicon.ico|images|assets|png|svg|jpg|jpeg|gif|webp).*)",
   ],
 }
