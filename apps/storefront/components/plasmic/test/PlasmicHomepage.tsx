@@ -206,7 +206,7 @@ function PlasmicHomepage__RenderFunc(props: {
             registerLabel={"Create Account"}
             registerPrompt={"Don't have an account?"}
             submitLabel={"Login"}
-            title={"Welcome Back User"}
+            title={"Welcome Back "}
           />
         </div>
       </div>

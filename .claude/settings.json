@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -d src/app/home src/app/test-page src/app/hello-test)",
+      "Bash(find components/plasmic/test -type f)"
+    ]
+  }
+}

@@ -29,19 +29,6 @@
       "cssFilePath": "plasmic/blank_project/plasmic.css",
       "components": [
         {
-          "id": "vT52ykebc1Op",
-          "name": "Button",
-          "type": "managed",
-          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
-          "renderModuleFilePath": "plasmic/test/PlasmicButton.tsx",
-          "importSpec": {
-            "modulePath": "Button.tsx"
-          },
-          "cssFilePath": "plasmic/test/PlasmicButton.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "wa2O1Rx8yCvZ",
           "name": "Homepage",
           "type": "managed",
@@ -60,22 +47,17 @@
           }
         },
         {
-          "id": "C8KO1p_P0FD2",
-          "name": "HelloTest",
+          "id": "vT52ykebc1Op",
+          "name": "Button",
           "type": "managed",
           "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
-          "renderModuleFilePath": "plasmic/test/PlasmicHelloTest.tsx",
+          "renderModuleFilePath": "plasmic/test/PlasmicButton.tsx",
           "importSpec": {
-            "modulePath": "../src/app/hello-test/page.tsx"
+            "modulePath": "Button.tsx"
           },
-          "cssFilePath": "plasmic/test/PlasmicHelloTest.module.css",
+          "cssFilePath": "plasmic/test/PlasmicButton.module.css",
           "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/hello-test",
-          "rsc": {
-            "serverModulePath": "plasmic/test/PlasmicHelloTestServer.tsx",
-            "clientModulePath": "../src/app/hello-test/page-client.tsx"
-          }
+          "componentType": "component"
         }
       ],
       "icons": [
