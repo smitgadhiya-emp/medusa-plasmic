@@ -45,19 +45,6 @@
             "serverModulePath": "plasmic/test/PlasmicHomepageServer.tsx",
             "clientModulePath": "../src/app/home/page-client.tsx"
           }
-        },
-        {
-          "id": "vT52ykebc1Op",
-          "name": "Button",
-          "type": "managed",
-          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
-          "renderModuleFilePath": "plasmic/test/PlasmicButton.tsx",
-          "importSpec": {
-            "modulePath": "Button.tsx"
-          },
-          "cssFilePath": "plasmic/test/PlasmicButton.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         }
       ],
       "icons": [

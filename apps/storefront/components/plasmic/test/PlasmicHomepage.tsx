@@ -202,6 +202,37 @@ function PlasmicHomepage__RenderFunc(props: {
             className={classNames("__wab_instance", sty.loginForm)}
             emailPlaceholder={"E-mail"}
             forgotLabel={"Forgot your password??"}
+            onLogin={async values => {
+              const $steps = {};
+
+              $steps["updateVariable"] = true
+                ? (() => {
+                    const actionArgs = {
+                      variable: {
+                        objRoot: $state,
+                        variablePath: ["variable"]
+                      },
+                      operation: 0
+                    };
+                    return (({ variable, value, startIndex, deleteCount }) => {
+                      if (!variable) {
+                        return;
+                      }
+                      const { objRoot, variablePath } = variable;
+
+                      $stateSet(objRoot, variablePath, value);
+                      return value;
+                    })?.apply(null, [actionArgs]);
+                  })()
+                : undefined;
+              if (
+                $steps["updateVariable"] != null &&
+                typeof $steps["updateVariable"] === "object" &&
+                typeof $steps["updateVariable"].then === "function"
+              ) {
+                $steps["updateVariable"] = await $steps["updateVariable"];
+              }
+            }}
             passwordPlaceholder={"Password"}
             registerLabel={"Create Account"}
             registerPrompt={"Don't have an account?"}

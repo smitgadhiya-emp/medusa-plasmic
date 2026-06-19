@@ -2,6 +2,7 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs"
 
 import PromoBadge from "@modules/common/components/promo-badge"
 import LoginForm from "@modules/account/components/auth-card/login-form"
+import { Button } from "@modules/common/components/ui/button"
 
 // Pages/designs are handled by codegen (`plasmic sync`). This loader instance is
 // used ONLY to register your hand-written code components for Studio's
@@ -81,6 +82,43 @@ PLASMIC.registerComponent(LoginForm, {
     onRegister: {
       type: "eventHandler",
       argTypes: [],
+    },
+  },
+})
+
+
+// shadcn Button. `name` must be "Button" to match the named export, since
+// codegen imports it as `import { Button } from ...`.
+PLASMIC.registerComponent(Button, {
+  name: "Button",
+  displayName: "Button (shadcn)",
+  importPath: "@modules/common/components/ui/button",
+  props: {
+    children: {
+      type: "slot",
+      defaultValue: "Button",
+    },
+    variant: {
+      type: "choice",
+      options: ["default", "legoBlue", "legoGold"],
+      defaultValue: "default",
+    },
+    shape: {
+      type: "choice",
+      options: ["normal", "lego"],
+      defaultValue: "normal",
+    },
+    size: {
+      type: "choice",
+      options: ["default", "sm", "lg"],
+      defaultValue: "default",
+    },
+    disabled: {
+      type: "boolean",
+    },
+    onClick: {
+      type: "eventHandler",
+      argTypes: [{ name: "event", type: "object" }],
     },
   },
 })

@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "Bash(ls -d src/app/home src/app/test-page src/app/hello-test)",
-      "Bash(find components/plasmic/test -type f)"
+      "Bash(find components/plasmic/test -type f)",
+      "Bash(rm -rf src/app/hello-test src/app/login-preview)",
+      "Bash(rm -f components/plasmic/test/PlasmicButton.tsx components/plasmic/test/PlasmicButton.module.css components/Button.tsx)",
+      "Bash(rm -f components/plasmic/test/PlasmicHelloTest*.tsx components/plasmic/test/PlasmicHelloTest.module.css)",
+      "Bash(rm -f components/plasmic/test/PlasmicNewPage*.tsx components/plasmic/test/PlasmicNewPage.module.css)",
+      "Bash(rm -rf components/plasmic/test/icons public/plasmic/test/images)",
+      "Bash(node -e \"const j=JSON.parse\\(require\\('fs'\\).readFileSync\\('plasmic.json','utf8'\\)\\); const p=j.projects[0]; console.log\\('✅ valid JSON'\\); console.log\\('components:', p.components.map\\(c=>c.name\\)\\); console.log\\('icons:', p.icons.length, 'images:', p.images.length\\); console.log\\('codeComponents:', p.codeComponents.map\\(c=>c.name\\)\\)\")",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/plasmic-host)"
     ]
   }
 }
