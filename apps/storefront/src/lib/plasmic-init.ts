@@ -3,6 +3,7 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs"
 import PromoBadge from "@modules/common/components/promo-badge"
 import LoginForm from "@modules/account/components/auth-card/login-form"
 import { Button } from "@modules/common/components/ui/button"
+import SignupForm from "@modules/account/components/auth-card/signup-from"
 
 // Pages/designs are handled by codegen (`plasmic sync`). This loader instance is
 // used ONLY to register your hand-written code components for Studio's
@@ -37,7 +38,6 @@ PLASMIC.registerComponent(PromoBadge, {
   },
 })
 
-
 PLASMIC.registerComponent(LoginForm, {
   name: "LoginForm",
   displayName: "Login Form",
@@ -71,10 +71,6 @@ PLASMIC.registerComponent(LoginForm, {
       type: "string",
       defaultValue: "Create Account",
     },
-    onLogin: {
-      type: "eventHandler",
-      argTypes: [{ name: "values", type: "object" }],
-    },
     onForgot: {
       type: "eventHandler",
       argTypes: [],
@@ -85,7 +81,6 @@ PLASMIC.registerComponent(LoginForm, {
     },
   },
 })
-
 
 // shadcn Button. `name` must be "Button" to match the named export, since
 // codegen imports it as `import { Button } from ...`.
@@ -123,4 +118,46 @@ PLASMIC.registerComponent(Button, {
   },
 })
 
-
+PLASMIC.registerComponent(SignupForm, {
+  name: "SignupForm",
+  displayName: "Signup Form",
+  importPath: "@modules/account/components/auth-card/signup-from",
+  props: {
+    title: {
+      type: "string",
+      defaultValue: "Create Account",
+    },
+    emailPlaceholder: {
+      type: "string",
+      defaultValue: "E-mail",
+    },
+    passwordPlaceholder: {
+      type: "string",
+      defaultValue: "Password",
+    },
+    forgotLabel: {
+      type: "string",
+      defaultValue: "Forgot your password??",
+    },
+    submitLabel: {
+      type: "string",
+      defaultValue: "Sign Up",
+    },
+    registerPrompt: {
+      type: "string",
+      defaultValue: "Don't have an account?",
+    },
+    registerLabel: {
+      type: "string",
+      defaultValue: "Create Account",
+    },
+    onForgot: {
+      type: "eventHandler",
+      argTypes: [],
+    },
+    onRegister: {
+      type: "eventHandler",
+      argTypes: [],
+    },
+  },
+})

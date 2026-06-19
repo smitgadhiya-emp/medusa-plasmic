@@ -10,7 +10,8 @@
       "Bash(rm -rf components/plasmic/test/icons public/plasmic/test/images)",
       "Bash(node -e \"const j=JSON.parse\\(require\\('fs'\\).readFileSync\\('plasmic.json','utf8'\\)\\); const p=j.projects[0]; console.log\\('✅ valid JSON'\\); console.log\\('components:', p.components.map\\(c=>c.name\\)\\); console.log\\('icons:', p.icons.length, 'images:', p.images.length\\); console.log\\('codeComponents:', p.codeComponents.map\\(c=>c.name\\)\\)\")",
       "Bash(npm run *)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/plasmic-host)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/plasmic-host)",
+      "Bash(node -e \"const u=require\\('@medusajs/framework/utils'\\); console.log\\('generateJwtToken:', typeof u.generateJwtToken\\); console.log\\('Modules.AUTH:', u.Modules && u.Modules.AUTH\\); console.log\\('CONFIG_MODULE:', u.ContainerRegistrationKeys && u.ContainerRegistrationKeys.CONFIG_MODULE\\); console.log\\('MedusaError:', typeof u.MedusaError\\);\")"
     ]
   }
 }

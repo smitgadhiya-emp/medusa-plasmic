@@ -45,6 +45,42 @@
             "serverModulePath": "plasmic/test/PlasmicHomepageServer.tsx",
             "clientModulePath": "../src/app/home/page-client.tsx"
           }
+        },
+        {
+          "id": "cz_5_nedk6OS",
+          "name": "Signup",
+          "type": "managed",
+          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
+          "renderModuleFilePath": "plasmic/test/PlasmicSignup.tsx",
+          "importSpec": {
+            "modulePath": "../src/app/signup/page.tsx"
+          },
+          "cssFilePath": "plasmic/test/PlasmicSignup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/signup",
+          "rsc": {
+            "serverModulePath": "plasmic/test/PlasmicSignupServer.tsx",
+            "clientModulePath": "../src/app/signup/page-client.tsx"
+          }
+        },
+        {
+          "id": "CYty2imRoz5Z",
+          "name": "Login",
+          "type": "managed",
+          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
+          "renderModuleFilePath": "plasmic/test/PlasmicLogin.tsx",
+          "importSpec": {
+            "modulePath": "../src/app/login/page.tsx"
+          },
+          "cssFilePath": "plasmic/test/PlasmicLogin.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/login",
+          "rsc": {
+            "serverModulePath": "plasmic/test/PlasmicLoginServer.tsx",
+            "clientModulePath": "../src/app/login/page-client.tsx"
+          }
         }
       ],
       "icons": [
@@ -67,7 +103,7 @@
         }
       ],
       "indirect": false,
-      "globalContextsFilePath": "",
+      "globalContextsFilePath": "plasmic/test/PlasmicGlobalContextsProvider.tsx",
       "splitsProviderFilePath": "",
       "styleTokensProviderFilePath": "plasmic/blank_project/PlasmicStyleTokensProvider.tsx",
       "dataTokensFilePath": "",
@@ -96,6 +132,18 @@
           "name": "LoginForm",
           "displayName": "LoginForm",
           "componentImportPath": "@modules/account/components/auth-card/login-form"
+        },
+        {
+          "id": "ZIUI5PbrHFWH",
+          "name": "Button",
+          "displayName": "Button",
+          "componentImportPath": "@modules/common/components/ui/button"
+        },
+        {
+          "id": "2nwWPQxKtDbA",
+          "name": "SignupForm",
+          "displayName": "SignupForm",
+          "componentImportPath": "@modules/account/components/auth-card/signup-from"
         }
       ],
       "customFunctions": []
@@ -310,10 +358,42 @@
         }
       ],
       "customFunctions": []
+    },
+    {
+      "projectId": "8PtdGodUbexNYgkuyBUcWu",
+      "projectApiToken": "34o5R5KswluuZ4sD83F88oQrcLWsNNeUpCptQ8Okf4hYqgjnHnX2idGAlhtB7WWQQelNAInf5XFazR1cGw",
+      "projectName": "plasmic-embed-css",
+      "version": ">0.0.0",
+      "cssFilePath": "plasmic/plasmic_embed_css/plasmic.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "plasmic/plasmic_embed_css/PlasmicGlobalContextsProvider.tsx",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/plasmic_embed_css/PlasmicStyleTokensProvider.tsx",
+      "dataTokensFilePath": "",
+      "projectModuleFilePath": "plasmic/plasmic_embed_css/plasmic.tsx",
+      "codeComponents": [
+        {
+          "id": "qF0uJxFztB",
+          "name": "EmbedCss",
+          "displayName": "global-embed-css",
+          "componentImportPath": "@plasmicpkgs/plasmic-embed-css"
+        }
+      ],
+      "customFunctions": []
     }
   ],
   "globalVariants": {
-    "variantGroups": []
+    "variantGroups": [
+      {
+        "id": "Exd9LxiNtfDh",
+        "name": "Screen",
+        "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
+        "contextFilePath": "plasmic/test/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
   },
   "wrapPagesWithGlobalContexts": true,
   "preserveJsImportExtensions": false,

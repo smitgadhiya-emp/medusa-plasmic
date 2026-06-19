@@ -4,10 +4,10 @@ import { Eye, EyeSlash } from "@medusajs/icons"
 import { useRouter } from "next/navigation"
 import * as React from "react"
 
-import { loginWithCredentials } from "@lib/data/auth"
+import { loginWithCredentials, signup } from "@lib/data/auth"
 import { Button } from "@modules/common/components/ui/button"
 
-export interface LoginFormProps {
+export interface SignupFormProps {
   title?: string
   emailPlaceholder?: string
   passwordPlaceholder?: string
@@ -20,31 +20,33 @@ export interface LoginFormProps {
   onRegister?: () => void
 }
 
-export function LoginForm({
-  title = "Welcome Back",
+export function SignupForm({
+  title = "Create Account",
   emailPlaceholder = "E-mail",
   passwordPlaceholder = "Password",
   forgotLabel = "Forgot your password??",
-  submitLabel = "Login",
+  submitLabel = "Sign Up",
   registerPrompt = "Don't have an account?",
   registerLabel = "Create Account",
   className,
   onForgot,
   onRegister,
-}: LoginFormProps) {
+}: SignupFormProps) {
   const router = useRouter()
   const [showPassword, setShowPassword] = React.useState(false)
   const [email, setEmail] = React.useState("")
   const [password, setPassword] = React.useState("")
+    const [first_name, setFirstName] = React.useState("")
+    const [last_name, setLastName] = React.useState("")
   const [isPending, startTransition] = React.useTransition()
   const [error, setError] = React.useState<string | null>(null)
 
-  // Runs the login mutation against our backend route POST /store/auth/login.
+  // Runs the signup mutation against our backend route POST /store/auth/signup.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
     startTransition(async () => {
-      const result = await loginWithCredentials({ email, password })
+      const result = await signup({ email, password, first_name, last_name })
       // The server action returns a string only when something failed.
       if (typeof result === "string") {
         setError(result)
@@ -69,6 +71,20 @@ export function LoginForm({
       </h1>
 
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <input
+          type="first_name"
+          className={inputClass}
+          placeholder="First Name"
+          value={first_name}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+        <input
+          type="last_name"
+          className={inputClass}
+          placeholder="Last Name"
+          value={last_name}
+          onChange={(e) => setLastName(e.target.value)}
+        />
         <input
           type="email"
           className={inputClass}
@@ -136,4 +152,4 @@ export function LoginForm({
   )
 }
 
-export default LoginForm
+export default SignupForm
