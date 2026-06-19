@@ -4,6 +4,7 @@ import PromoBadge from "@modules/common/components/promo-badge"
 import LoginForm from "@modules/account/components/auth-card/login-form"
 import { Button } from "@modules/common/components/ui/button"
 import SignupForm from "@modules/account/components/auth-card/signup-from"
+import DummyHomePage from "@modules/home/components/dummy-home"
 
 // Pages/designs are handled by codegen (`plasmic sync`). This loader instance is
 // used ONLY to register your hand-written code components for Studio's
@@ -156,6 +157,31 @@ PLASMIC.registerComponent(SignupForm, {
       argTypes: [],
     },
     onRegister: {
+      type: "eventHandler",
+      argTypes: [],
+    },
+  },
+})
+
+PLASMIC.registerComponent(DummyHomePage, {
+  name: "DummyHomePage",
+  displayName: "Dummy Home Page",
+  importPath: "@modules/home/components/dummy-home",
+  props: {
+    title: {
+      type: "string",
+      defaultValue: "Build something people love",
+    },
+    subtitle: {
+      type: "string",
+      defaultValue:
+        "A starter storefront powered by Medusa and Next.js. Responsive out of the box, ready for you to make it your own.",
+    },
+    ctaLabel: {
+      type: "string",
+      defaultValue: "Shop now",
+    },
+    onCtaClick: {
       type: "eventHandler",
       argTypes: [],
     },

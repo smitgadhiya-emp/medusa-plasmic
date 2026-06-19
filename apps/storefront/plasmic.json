@@ -29,24 +29,6 @@
       "cssFilePath": "plasmic/blank_project/plasmic.css",
       "components": [
         {
-          "id": "wa2O1Rx8yCvZ",
-          "name": "Homepage",
-          "type": "managed",
-          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
-          "renderModuleFilePath": "plasmic/test/PlasmicHomepage.tsx",
-          "importSpec": {
-            "modulePath": "../src/app/home/page.tsx"
-          },
-          "cssFilePath": "plasmic/test/PlasmicHomepage.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/home",
-          "rsc": {
-            "serverModulePath": "plasmic/test/PlasmicHomepageServer.tsx",
-            "clientModulePath": "../src/app/home/page-client.tsx"
-          }
-        },
-        {
           "id": "cz_5_nedk6OS",
           "name": "Signup",
           "type": "managed",
@@ -80,6 +62,24 @@
           "rsc": {
             "serverModulePath": "plasmic/test/PlasmicLoginServer.tsx",
             "clientModulePath": "../src/app/login/page-client.tsx"
+          }
+        },
+        {
+          "id": "wa2O1Rx8yCvZ",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "3RVpz8tf8oHM2jiuGYHU8J",
+          "renderModuleFilePath": "plasmic/test/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../src/app/home/page.tsx"
+          },
+          "cssFilePath": "plasmic/test/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/home",
+          "rsc": {
+            "serverModulePath": "plasmic/test/PlasmicHomepageServer.tsx",
+            "clientModulePath": "../src/app/home/page-client.tsx"
           }
         }
       ],
@@ -144,6 +144,12 @@
           "name": "SignupForm",
           "displayName": "SignupForm",
           "componentImportPath": "@modules/account/components/auth-card/signup-from"
+        },
+        {
+          "id": "CP4g2YQT8zR9",
+          "name": "DummyHomePage",
+          "displayName": "DummyHomePage",
+          "componentImportPath": "@modules/home/components/dummy-home"
         }
       ],
       "customFunctions": []

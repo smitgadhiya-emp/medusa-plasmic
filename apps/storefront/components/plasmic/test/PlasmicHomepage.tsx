@@ -63,8 +63,8 @@ import {
 
 import { generateDynamicMetadata, PageCtx } from "./PlasmicHomepageServer"; // plasmic-import: wa2O1Rx8yCvZ/rscServer
 
-import { LoginForm } from "@modules/account/components/auth-card/login-form"; // plasmic-import: NX-9i5iEb0B-/codeComponent
 import { Button } from "@modules/common/components/ui/button"; // plasmic-import: ZIUI5PbrHFWH/codeComponent
+import { DummyHomePage } from "@modules/home/components/dummy-home"; // plasmic-import: CP4g2YQT8zR9/codeComponent
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources";
 import { _useGlobalVariants } from "../blank_project/plasmic"; // plasmic-import: 3RVpz8tf8oHM2jiuGYHU8J/projectModule
 import { _useStyleTokens } from "../blank_project/PlasmicStyleTokensProvider"; // plasmic-import: 3RVpz8tf8oHM2jiuGYHU8J/styleTokensProvider
@@ -101,7 +101,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
-  loginForm?: Flex__<typeof LoginForm>;
+  dummyHomePage?: Flex__<typeof DummyHomePage>;
 };
 
 export interface DefaultHomepageProps {}
@@ -199,19 +199,6 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <LoginForm
-            data-plasmic-name={"loginForm"}
-            data-plasmic-override={overrides.loginForm}
-            className={classNames("__wab_instance", sty.loginForm)}
-            emailPlaceholder={"E-mail"}
-            forgotLabel={"Forgot your password??"}
-            passwordPlaceholder={"Password"}
-            registerLabel={"Create Account"}
-            registerPrompt={"Don't have an account?"}
-            submitLabel={"Login"}
-            title={"Welcome Back "}
-          />
-
           <Button
             className={classNames("__wab_instance", sty.buttonShadcn__fYs2)}
             shape={"normal"}
@@ -221,26 +208,10 @@ function PlasmicHomepage__RenderFunc(props: {
             {"Button"}
           </Button>
           <Button
-            className={classNames("__wab_instance", sty.buttonShadcn__o60HP)}
-            shape={"lego"}
-            size={"lg"}
-            variant={"legoBlue"}
-          >
-            {"Button"}
-          </Button>
-          <Button
             className={classNames("__wab_instance", sty.buttonShadcn__iwC)}
             shape={"normal"}
             size={"default"}
             variant={"default"}
-          >
-            {"Button"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.buttonShadcn__wlrOf)}
-            shape={"lego"}
-            size={"default"}
-            variant={"legoGold"}
           >
             {"Button"}
           </Button>
@@ -260,6 +231,16 @@ function PlasmicHomepage__RenderFunc(props: {
           >
             {"Button"}
           </Button>
+          <DummyHomePage
+            data-plasmic-name={"dummyHomePage"}
+            data-plasmic-override={overrides.dummyHomePage}
+            className={classNames("__wab_instance", sty.dummyHomePage)}
+            ctaLabel={"Shop now"}
+            subtitle={
+              "A starter storefront powered by Medusa and Next.js. Responsive out of the box, ready for you to make it your own."
+            }
+            title={"Build something people love"}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -267,15 +248,15 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "loginForm"],
-  loginForm: ["loginForm"]
+  root: ["root", "dummyHomePage"],
+  dummyHomePage: ["dummyHomePage"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  loginForm: typeof LoginForm;
+  dummyHomePage: typeof DummyHomePage;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -340,7 +321,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    loginForm: makeNodeComponent("loginForm"),
+    dummyHomePage: makeNodeComponent("dummyHomePage"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

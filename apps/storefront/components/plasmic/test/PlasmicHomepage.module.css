@@ -9,42 +9,6 @@
   min-height: 0;
   padding: 0px;
 }
-.loginForm:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  margin-right: 0px;
-  width: 580px;
-  position: absolute;
-  left: 340px;
-  top: 117px;
-  z-index: 1;
-  transition-property: all;
-  transition-duration: 1s;
-  margin-bottom: 0px;
-  display: block;
-  flex-shrink: 1;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 1s;
-}
-@media (max-width: 1023px) {
-  .loginForm:global(.__wab_instance) {
-    left: 145px;
-    top: 139px;
-    width: 56.18%;
-    margin-right: 7px;
-    height: 544px;
-    margin-bottom: 0px;
-  }
-}
-@media (max-width: 511px) {
-  .loginForm:global(.__wab_instance) {
-    left: 34px;
-    top: 24px;
-    width: 80%;
-    margin-bottom: 0px;
-    height: 785px;
-  }
-}
 .buttonShadcn__fYs2:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
@@ -55,24 +19,6 @@
 }
 @media (max-width: 511px) {
   .buttonShadcn__fYs2:global(.__wab_instance) {
-    display: none;
-  }
-}
-.buttonShadcn__o60HP:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: absolute;
-  left: 284px;
-  top: 827px;
-  display: none;
-}
-@media (max-width: 1023px) {
-  .buttonShadcn__o60HP:global(.__wab_instance) {
-    display: flex;
-  }
-}
-@media (max-width: 511px) {
-  .buttonShadcn__o60HP:global(.__wab_instance) {
     display: none;
   }
 }
@@ -87,24 +33,6 @@
 @media (max-width: 511px) {
   .buttonShadcn__iwC:global(.__wab_instance) {
     display: flex;
-  }
-}
-.buttonShadcn__wlrOf:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: absolute;
-  left: 103px;
-  top: 907px;
-  display: none;
-}
-@media (max-width: 1023px) {
-  .buttonShadcn__wlrOf:global(.__wab_instance) {
-    display: flex;
-  }
-}
-@media (max-width: 511px) {
-  .buttonShadcn__wlrOf:global(.__wab_instance) {
-    display: none;
   }
 }
 .buttonShadcn__lOqRq:global(.__wab_instance) {
@@ -132,4 +60,11 @@
   .buttonShadcn__wvAYx:global(.__wab_instance) {
     display: none;
   }
+}
+.dummyHomePage:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0px;
+  top: 0px;
 }
