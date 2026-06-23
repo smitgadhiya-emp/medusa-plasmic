@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Medusa DTC (direct-to-consumer) ecommerce starter. A **Turborepo monorepo** with two apps:
 
-- `apps/backend` (`@dtc/backend`) — Medusa v2 server (admin + Store/Admin REST APIs), runs on port `9000`, admin dashboard at `/app`.
+- `apps/backend` (`@dtc/backend`) — Medusa v2 server (admin + Store/Admin REST APIs), runs on port `9001` (set via `PORT`), admin dashboard at `/app`.
 - `apps/storefront` (`@dtc/storefront`) — Next.js 15 App Router storefront, runs on port `8000`.
 
 The two apps are decoupled: the storefront is a pure API consumer that talks to the backend over HTTP via `@medusajs/js-sdk`. There is no shared code package between them.
@@ -54,7 +54,7 @@ npm run analyze      # bundle analysis (ANALYZE=true next build)
 1. Backend needs a Postgres DB. Copy `apps/backend/.env.template` → `.env`, set `DATABASE_URL`, then `npx medusa db:migrate`.
 2. Storefront needs a publishable API key from the running backend (Admin → Settings → Publishable API key). Copy `apps/storefront/.env.template` → `.env.local` and set `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`. The storefront **will not start** without it (`check-env-variables.js` hard-exits via `next.config.js`).
 
-Storefront env vars: `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY` (required), `NEXT_PUBLIC_MEDUSA_BACKEND_URL` (default `http://localhost:9000`), `NEXT_PUBLIC_DEFAULT_REGION` (default `dk`), `NEXT_PUBLIC_BASE_URL`, `NEXT_PUBLIC_STRIPE_KEY` (optional).
+Storefront env vars: `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY` (required), `NEXT_PUBLIC_MEDUSA_BACKEND_URL` (default `http://localhost:9001`), `NEXT_PUBLIC_DEFAULT_REGION` (default `dk`), `NEXT_PUBLIC_BASE_URL`, `NEXT_PUBLIC_STRIPE_KEY` (optional).
 
 ## Backend architecture (Medusa v2)
 
