@@ -54,3 +54,5 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 **/.DS_Store
+# Medusa backend lockfile breaks npm ci (peer-dep bug); backend installs via npm install
+apps/backend/package-lock.json
