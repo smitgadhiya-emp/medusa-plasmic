@@ -12,7 +12,8 @@
       "Bash(npm run *)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/plasmic-host)",
       "Bash(node -e \"const u=require\\('@medusajs/framework/utils'\\); console.log\\('generateJwtToken:', typeof u.generateJwtToken\\); console.log\\('Modules.AUTH:', u.Modules && u.Modules.AUTH\\); console.log\\('CONFIG_MODULE:', u.ContainerRegistrationKeys && u.ContainerRegistrationKeys.CONFIG_MODULE\\); console.log\\('MedusaError:', typeof u.MedusaError\\);\")",
-      "Bash(sed -i 's|http://localhost:9000|http://localhost:9001|g; s|localhost:9000/app|localhost:9001/app|g' CLAUDE.md README.md && grep -n \"9001\\\\|9000\" CLAUDE.md README.md | grep -v node_modules)"
+      "Bash(sed -i 's|http://localhost:9000|http://localhost:9001|g; s|localhost:9000/app|localhost:9001/app|g' CLAUDE.md README.md && grep -n \"9001\\\\|9000\" CLAUDE.md README.md | grep -v node_modules)",
+      "Bash(node -e ' *)"
     ],
     "additionalDirectories": [
       "/home/empiric/Desktop/smit/medusa-test"
